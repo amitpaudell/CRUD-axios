@@ -24,7 +24,7 @@ const Form = ({ data, setData, updateData, setUpdateData }) => {
       const res = await postData(addData);
 
       if (res.status == 201) {
-        setData([...data, res.data]);
+        setData([res.data, ...data]);
         setAddData({ title: '', body: '' });
       }
     } catch (error) {
